@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Configuration parameters
-nav_order: 1
+nav_order: 2
 ---
 
 # Configuration parameters
@@ -18,7 +18,7 @@ nav_order: 1
 
 ---
 
-## Configura File Integrity Monitor
+## Configure File Integrity Monitor
 
 To customize your installation and monitor custom folders, you may want to edit the config.yml file. Such file is pretty straightforward below you have an example configuration:
 
@@ -91,3 +91,6 @@ Or
       - .txt
       - .tmp
 ```
+
+# Configuration parameters
+- `node`
