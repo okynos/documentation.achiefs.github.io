@@ -68,10 +68,11 @@ Define the event producer's name.
 This parameter will come on each event produced by the process.
 
 - ## events
-Section
-{: .label .label-green }
 
-Handle event output parameters.
+    Section
+    {: .label .label-green }
+
+    Handle event output parameters.
 
     - ### destination
     String
