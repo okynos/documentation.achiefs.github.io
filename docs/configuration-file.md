@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Configuration parameters
+title: Configuration file
 nav_order: 2
 ---
 
-# Configuration parameters
+# Configuration file
 {: .no_toc }
 
 <details open markdown="block">
@@ -56,7 +56,22 @@ log:
   level: info
 ```
 
-We will describe each field and sub-field:
+We will describe each field and sub-field.
+
+## Parameters
+### node
+String
+{: .label }
+
+Define the event producer's name.
+This parameter will come on each event produced by the process.
+
+### events
+
+### node
+
+### node
+
 - `node`, [String] to define host/app custom name.
 - `events`, [Section] to handle file system events output.
   - `destination`, [String] that defines the destination of the events, options [file, network, both], default 'file'.
