@@ -1,6 +1,6 @@
 title: FIM docs
 description: File Integrity Monitoring software documentation webpage
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 color_scheme: light
 
 url: https://documentation.achiefs.github.io
