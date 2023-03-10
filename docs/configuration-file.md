@@ -74,16 +74,24 @@ Section
 Handle event output parameters.
 
 ### destination
+String
+{: .label }
 
 ### file
+String
+{: .label }
 
 ### endpoint
 Section
 {: .label .label-green }
 
 #### address
+String
+{: .label }
 
 #### insecure
+Boolean
+{: .label .label-purple }
 
 #### credentials
 Section
@@ -97,7 +105,58 @@ String
 String
 {: .label }
 
-### node
+## audit
+Section
+{: .label .label-green }
+
+### path
+String
+{: .label }
+
+#### ignore
+Array
+{: .label .label-yellow }
+String
+{: .label}
+
+#### labels
+Array
+{: .label .label-yellow }
+String
+{: .label}
+
+## monitor
+Section
+{: .label .label-green }
+
+### path
+String
+{: .label }
+
+#### ignore
+Array
+{: .label .label-yellow }
+String
+{: .label}
+
+#### labels
+Array
+{: .label .label-yellow }
+String
+{: .label}
+
+## log
+Section
+{: .label .label-green }
+
+### file
+String
+{: .label }
+
+### level
+String
+{: .label }
+
 
 - `node`, [String] to define host/app custom name.
 - `events`, [Section] to handle file system events output.
