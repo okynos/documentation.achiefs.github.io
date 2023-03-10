@@ -58,17 +58,43 @@ log:
 
 We will describe each field and sub-field.
 
-## Parameters
-### node
+# Parameters
+## node
 String
 {: .label }
 
 Define the event producer's name.
+
 This parameter will come on each event produced by the process.
 
-### events
+## events
+Section
+{: .label-green }
 
-### node
+Handle event output parameters.
+
+### destination
+
+### file
+
+### endpoint
+Section
+{: .label-green}
+
+#### address
+
+#### insecure
+
+#### credentials
+Section
+{: .label-green}
+
+##### user
+String {: .label}
+
+##### password
+String
+{: .label}
 
 ### node
 
