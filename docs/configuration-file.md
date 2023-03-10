@@ -79,7 +79,7 @@ Handle event output parameters.
 
 ### endpoint
 Section
-{: .label-green}
+{: .label-green }
 
 #### address
 
@@ -87,14 +87,15 @@ Section
 
 #### credentials
 Section
-{: .label-green}
+{: .label-green }
 
 ##### user
-String {: .label}
+String
+{: .label }
 
 ##### password
 String
-{: .label}
+{: .label }
 
 ### node
 
