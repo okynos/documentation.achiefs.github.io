@@ -67,7 +67,7 @@ Define the event producer's name.
 This parameter will come on each event produced by the process.
 
 ## events
-Section {: .label-green }
+Section {: .label .label-green }
 
 Handle event output parameters.
 
@@ -76,14 +76,14 @@ Handle event output parameters.
 ### file
 
 ### endpoint
-Section {: .label-green }
+Section {: .label .label-green }
 
 #### address
 
 #### insecure
 
 #### credentials
-Section {: .label-green }
+Section {: .label .label-green }
 
 ##### user
 String {: .label }
