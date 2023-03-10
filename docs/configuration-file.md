@@ -60,12 +60,15 @@ We will describe each field and sub-field.
 
 # Parameters
 ## node
+
 String
 {: .label }
 
 Define the event producer's name.
 
 This parameter will come on each event produced by the process.
+
+---
 
 - ## events
 
@@ -105,92 +108,83 @@ This parameter will come on each event produced by the process.
             {: .label .label-green }
 
             - ##### user
+
             String
             {: .label }
 
             - ##### password
+
             String
             {: .label }
 
-## audit
-Section
-{: .label .label-green }
+---
 
-### path
-String
-{: .label }
+- ## audit
 
-#### ignore
-Array
-{: .label .label-yellow }
-String
-{: .label}
+    Section
+    {: .label .label-green }
 
-{: .note }
-`ignore` formats:
-```
-  - path: /tmp/dir
-    ignore: [.txt, .tmp]
-```
-Or
-```
-  - path: /tmp/dir
-    ignore:
-      - .txt
-      - .tmp
-```
+    - ### path
 
-#### labels
-Array
-{: .label .label-yellow }
-String
-{: .label}
+        String
+        {: .label }
 
-## monitor
-Section
-{: .label .label-green }
+        - #### ignore
 
-### path
-String
-{: .label }
+        Array
+        {: .label .label-yellow }
+        String
+        {: .label}
 
-#### ignore
-Array
-{: .label .label-yellow }
-String
-{: .label}
+        - #### labels
 
-{: .note }
-`ignore` formats:
-```
-  - path: /tmp/dir
-    ignore: [.txt, .tmp]
-```
-Or
-```
-  - path: /tmp/dir
-    ignore:
-      - .txt
-      - .tmp
-```
+        Array
+        {: .label .label-yellow }
+        String
+        {: .label}
 
-#### labels
-Array
-{: .label .label-yellow }
-String
-{: .label}
+---
 
-## log
-Section
-{: .label .label-green }
+- ## monitor
 
-### file
-String
-{: .label }
+    Section
+    {: .label .label-green }
 
-### level
-String
-{: .label }
+    - ### path
+
+        String
+        {: .label }
+
+        - #### ignore
+
+        Array
+        {: .label .label-yellow }
+        String
+        {: .label}
+
+        - #### labels
+
+        Array
+        {: .label .label-yellow }
+        String
+        {: .label}
+
+---
+
+- ## log
+
+    Section
+    {: .label .label-green }
+
+    - ### file
+
+    String
+    {: .label }
+
+    - ### level
+
+    String
+    {: .label }
 
 
 - `node`, [String] to define host/app custom name.
@@ -214,3 +208,32 @@ String
 - `log`, [Section] keeps configuration of software logging output
   - `file`, [Path/String] to the output logs.
   - `level`, [String] level of verbosity, currently supported [debug, info, error, warning].
+
+
+{: .note }
+`ignore` formats:
+```
+  - path: /tmp/dir
+    ignore: [.txt, .tmp]
+```
+Or
+```
+  - path: /tmp/dir
+    ignore:
+      - .txt
+      - .tmp
+```
+
+{: .note }
+`labels` formats:
+```
+  - path: /tmp/dir
+    labels: ["temp", "linux"]
+```
+Or
+```
+  - path: /tmp/dir
+    labels:
+      - temp
+      - linux
+```
