@@ -67,43 +67,43 @@ Define the event producer's name.
 
 This parameter will come on each event produced by the process.
 
-## events
+- ## events
 Section
 {: .label .label-green }
 
 Handle event output parameters.
 
-### destination
-String
-{: .label }
+    - ### destination
+    String
+    {: .label }
 
-### file
-String
-{: .label }
+    - ### file
+    String
+    {: .label }
 
-### endpoint
-Section
-{: .label .label-green }
+    - ### endpoint
+    Section
+    {: .label .label-green }
 
-#### address
-String
-{: .label }
+        - #### address
+        String
+        {: .label }
 
-#### insecure
-Boolean
-{: .label .label-purple }
+        - #### insecure
+        Boolean
+        {: .label .label-purple }
 
-#### credentials
-Section
-{: .label .label-green }
+        - #### credentials
+        Section
+        {: .label .label-green }
 
-##### user
-String
-{: .label }
+            - ##### user
+            String
+            {: .label }
 
-##### password
-String
-{: .label }
+            - ##### password
+            String
+            {: .label }
 
 ## audit
 Section
@@ -118,6 +118,20 @@ Array
 {: .label .label-yellow }
 String
 {: .label}
+
+{: .note }
+`ignore` formats:
+```
+  - path: /tmp/dir
+    ignore: [.txt, .tmp]
+```
+Or
+```
+  - path: /tmp/dir
+    ignore:
+      - .txt
+      - .tmp
+```
 
 #### labels
 Array
@@ -138,6 +152,20 @@ Array
 {: .label .label-yellow }
 String
 {: .label}
+
+{: .note }
+`ignore` formats:
+```
+  - path: /tmp/dir
+    ignore: [.txt, .tmp]
+```
+Or
+```
+  - path: /tmp/dir
+    ignore:
+      - .txt
+      - .tmp
+```
 
 #### labels
 Array
@@ -179,19 +207,3 @@ String
 - `log`, [Section] keeps configuration of software logging output
   - `file`, [Path/String] to the output logs.
   - `level`, [String] level of verbosity, currently supported [debug, info, error, warning].
-
-`ignore` formats:
-```
-  - path: /tmp/dir
-    ignore: [.txt, .tmp]
-```
-Or
-```
-  - path: /tmp/dir
-    ignore:
-      - .txt
-      - .tmp
-```
-
-# Configuration parameters
-- `node`
