@@ -75,28 +75,34 @@ This parameter will come on each event produced by the process.
     Handle event output parameters.
 
     - ### destination
+
     String
     {: .label }
 
     - ### file
+
     String
     {: .label }
 
     - ### endpoint
-    Section
-    {: .label .label-green }
+
+        Section
+        {: .label .label-green }
 
         - #### address
+
         String
         {: .label }
 
         - #### insecure
+
         Boolean
         {: .label .label-purple }
 
         - #### credentials
-        Section
-        {: .label .label-green }
+
+            Section
+            {: .label .label-green }
 
             - ##### user
             String
