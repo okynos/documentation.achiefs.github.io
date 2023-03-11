@@ -211,29 +211,29 @@ This parameter will come on each event produced by the process.
 
 
 {: .note }
-`ignore` formats:
-```
-  - path: /tmp/dir
-    ignore: [.txt, .tmp]
-```
-Or
-```
-  - path: /tmp/dir
-    ignore:
-      - .txt
-      - .tmp
-```
+> `ignore` formats:
+> ```
+>   - path: /tmp/dir
+>     ignore: [.txt, .tmp]
+> ```
+> Or
+> ```
+>   - path: /tmp/dir
+>     ignore:
+>       - .txt
+>       - .tmp
+> ```
 
 {: .note }
-`labels` formats:
-```
-  - path: /tmp/dir
-    labels: ["temp", "linux"]
-```
-Or
-```
-  - path: /tmp/dir
-    labels:
-      - temp
-      - linux
-```
+> `labels` formats:
+> ```
+>   - path: /tmp/dir
+>     labels: ["temp", "linux"]
+> ```
+> Or
+> ```
+>   - path: /tmp/dir
+>     labels:
+>       - temp
+>       - linux
+> ```
