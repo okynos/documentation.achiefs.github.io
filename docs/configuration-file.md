@@ -20,41 +20,7 @@ nav_order: 2
 
 ## Configure File Integrity Monitor
 
-To customize your installation and monitor custom folders, you may want to edit the config.yml file. Such file is pretty straightforward below you have an example configuration:
-
-```
-node: "FIM"
-events:
-  destination: both
-  file: C:\ProgramData\fim\events.json
-  max_file_checksum: 64
-  endpoint:
-    address: "https://10.0.0.227:9200"
-    insecure: true
-    credentials:
-      user: "admin"
-      password: "admin"
-
-audit:
-  # Only available in Linux with Audit daemon installed
-  - path: /tmp/dir
-    ignore: [".txt"]
-    labels: ["audit"]
-
-monitor:
-  # Windows version
-  - path: C:\tmp\test.txt
-    ignore: [.log, .test]
-    labels: ["tmp", "windows"]
-  # Linux/Unix version
-  - path: /tmp/dir
-    ignore: [.txt]
-    labels: ["tmp", "linux"]
-
-log:
-  file: fim.log
-  level: info
-```
+To customize your installation and monitor custom folders, you may want to edit the config.yml file.
 
 We will describe each field and sub-field.
 
@@ -63,6 +29,8 @@ We will describe each field and sub-field.
 
 String
 {: .label }
+
+Default value: `FIM`.
 
 Define the event producer's name.
 
@@ -82,40 +50,74 @@ This parameter will come on each event produced by the process.
     String
     {: .label }
 
+    Default value: `file`.
+
+    Defines the destination of the events.
+    
+    The supported options are [file, network, both].
+
     - ### file
 
     String
     {: .label }
+
+    Default value: `C:\ProgramData\fim\events.json` for Windows systems, `/var/lib/fim/events.json` for Unix systems.
+
+    Defines where the events will be stored.
+
+    It receives a system path, ex: `C:\Users\event.json` (Windows systems) or `\home\events.json` (Unix systems).
 
     - ### endpoint
 
         Section
         {: .label .label-green }
 
+        Handle network parameters. 
+
         - #### address
 
         String
         {: .label }
+
+        Default value: `None`.
+
+        Defines the IP/DNS of indexer software currently supported indexers Elasticsearch, Opensearch and Wazuh-indexer.
+
+        Format example: `0.0.0.0` for IP, `indexer.example.com` for DNS.
 
         - #### insecure
 
         Boolean
         {: .label .label-purple }
 
+        Default value: `false`.
+
+        Defines the trust of HTTPS certificates of the indexer endpoint.
+
         - #### credentials
 
             Section
             {: .label .label-green }
+
+            Handle endpoint access credentials. 
 
             - ##### user
 
             String
             {: .label }
 
+            Default value: `None`.
+
+            Defines the username credential to push events into the indexer endpoint.
+
             - ##### password
 
             String
             {: .label }
+
+            Default value: `None`.
+
+            Defines the password credential to push events into the indexer endpoint.
 
 ---
 
@@ -124,10 +126,16 @@ This parameter will come on each event produced by the process.
     Section
     {: .label .label-green }
 
+    Keeps a list of files or directories to monitorize. This section will use audit daemon engine with enhanced information.
+    
+    Include as many elements as you require.
+
     - ### path
 
         String
         {: .label }
+
+        Defines the directory or file to monitor, it applies recursion.
 
         - #### ignore
 
@@ -136,12 +144,18 @@ This parameter will come on each event produced by the process.
         String
         {: .label}
 
+        Allows to ignore files that match the given string inside its name.
+        
+        Available formats Array or List, see the note at the end of the section.
+
         - #### labels
 
         Array
         {: .label .label-yellow }
         String
         {: .label}
+
+        Allows to define custom labels on each event produced at given path.
 
 ---
 
@@ -150,10 +164,16 @@ This parameter will come on each event produced by the process.
     Section
     {: .label .label-green }
 
+    Keeps a list of files or directories to monitorize.
+    
+    Include as many elements as you require.
+
     - ### path
 
         String
         {: .label }
+
+        Defines the directory or file to monitor, it applies recursion.
 
         - #### ignore
 
@@ -162,12 +182,18 @@ This parameter will come on each event produced by the process.
         String
         {: .label}
 
+        Allows to ignore files that match the given string inside its name.
+        
+        Available formats Array or List, see the note at the end of the section.
+
         - #### labels
 
         Array
         {: .label .label-yellow }
         String
         {: .label}
+
+        Allows to define custom labels on each event produced at given path.
 
 ---
 
@@ -176,47 +202,35 @@ This parameter will come on each event produced by the process.
     Section
     {: .label .label-green }
 
+    Keeps configuration of logging output.
+
     - ### file
 
     String
     {: .label }
+
+    Default value: `C:\ProgramData\fim\fim.log` for Windows systems, `/var/log/fim/fim.log` for Unix systems.
+
+    Defines where the logs will be stored.
 
     - ### level
 
     String
     {: .label }
 
+    Default value `info`.
 
-- `node`, [String] to define host/app custom name.
-- `events`, [Section] to handle file system events output.
-  - `destination`, [String] that defines the destination of the events, options [file, network, both], default 'file'.
-  - `file`, [Path/String] where the events will be stored.
-  - `endpoint`, [Section] to define network parameters. 
-    - `address`, [String] that defines the IP/DNS of indexer software [ElasticSearch/OpenSearch].
-    - `insecure`, [Boolean] set the trust of HTTPS self signed certificates at the endpoint.
-    - `credentials`, [Section] that defines the credentials to access to the endpoint. 
-      - `user`, [String] that defines username of indexer software.
-      - `password`, [String] that defines password of indexer software.
-- `monitor`, [Section] that keeps a list of files/directories. Add as many lines as you require.
-  - `path`, [Path/String] That defines the directory or file to monitor, it's recursive.
-    - `ignore`, [List/Array] that allows you to ignore files that match the given string inside its name. Available formats Array or List.
-    - `labels`, [Array] that allows to define custom labels on each event produced in the defined directory.
-- `audit`, [Section] that keeps a list of files/directories. Add as many lines as you require. This section will use audit daemon engine with enhanced information.
-  - `path`, [Path/String] That defines the directory or file to monitor, it's recursive.
-    - `ignore`, [List/Array] that allows you to ignore files that match the given string inside its name. Available formats Array or List.
-    - `labels`, [Array] that allows to define custom labels on each event produced in the defined directory.
-- `log`, [Section] keeps configuration of software logging output
-  - `file`, [Path/String] to the output logs.
-  - `level`, [String] level of verbosity, currently supported [debug, info, error, warning].
-
+    Defines the level of verbosity logged to log file.
+    
+    The supported options are [debug, info, error, warning].
 
 {: .note }
-> `ignore` formats:
+> The `ignore` parameter has two different formats:
 > ```
 >   - path: /tmp/dir
 >     ignore: [.txt, .tmp]
 > ```
-> Or
+> Or list variant: 
 > ```
 >   - path: /tmp/dir
 >     ignore:
@@ -225,15 +239,120 @@ This parameter will come on each event produced by the process.
 > ```
 
 {: .note }
-> `labels` formats:
+> The `labels` parameter has two different formats:
 > ```
 >   - path: /tmp/dir
 >     labels: ["temp", "linux"]
 > ```
-> Or
+> Or list variant:
 > ```
 >   - path: /tmp/dir
 >     labels:
 >       - temp
 >       - linux
 > ```
+
+---
+
+## Example configuration
+
+FIM by default comes with a ready to use configuration. You can tune up as you wish. Here you can see an example configuration:
+
+Windows systems:
+```
+node: "FIM"
+
+# Events configuration, where to store produced events
+events:
+  destination: both
+  file: C:\ProgramData\fim\events.json
+  max_file_checksum: 64
+  endpoint:
+    address: "https://127.0.0.1:9200"
+    insecure: true
+    credentials:
+      user: "admin"
+      password: "admin"
+
+# Monitor folder or files.
+monitor:
+  - path: C:\Program Files\
+    labels: ["Program Files", "windows"]
+  - path: C:\Users\
+    labels: ["Users", "windows"]
+
+# App procedure and errors logging
+log:
+  file: C:\ProgramData\fim\fim.log
+  # Available levels [debug, info, error, warning]
+  level: info
+```
+
+Linux systems:
+```
+node: "FIM"
+
+# Events configuration, where to store produced events
+events:
+  destination: both
+  file: /var/lib/fim/events.json
+  max_file_checksum: 64
+  endpoint:
+    address: "https://127.0.0.1:9200"
+    insecure: true
+    credentials:
+      user: "admin"
+      password: "admin"
+
+# Audit extended files and folders information
+audit:
+  - path: /tmp
+    labels: ["tmp", "linux"]
+    ignore: [".swp"]
+
+# Simple files and folders information
+monitor:
+  - path: /bin/
+  - path: /usr/bin/
+    labels: ["usr/bin", "linux"]
+  - path: /etc
+    labels: ["etc", "linux"]
+
+# App procedure and errors logging
+log:
+  file: /var/log/fim/fim.log
+  # Available levels [debug, info, error, warning]
+  level: info
+```
+
+macOS systems:
+```
+node: "FIM"
+
+# Events configuration, where to store produced events
+events:
+  destination: both
+  file: /var/lib/fim/events.json
+  max_file_checksum: 64
+  endpoint:
+    address: "https://127.0.0.1:9200"
+    insecure: true
+    credentials:
+      user: "admin"
+      password: "admin"
+
+# Monitor files and folders.
+monitor:
+  - path: /tmp/
+  - path: /bin/
+  - path: /usr/bin/
+    labels: ["usr/bin", "macos"]
+  - path: /etc
+    labels: ["etc", "macos"]
+
+# App procedure and errors logging
+log:
+  file: /var/log/fim/fim.log
+  # Available levels [debug, info, error, warning]
+  level: info
+```
