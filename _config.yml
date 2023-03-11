@@ -7,3 +7,11 @@ url: https://okynos.github.io/documentation.achiefs.github.io
 
 aux_links:
   Source Repository: https://github.com/Achiefs/fim
+
+callouts:
+  note:
+    title: Note
+    color: blue
+
+ga_tracking: G-MTKBVPJR32
+ga_tracking_anonymize_ip: true
