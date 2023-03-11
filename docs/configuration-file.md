@@ -20,9 +20,9 @@ nav_order: 2
 
 ## Configure File Integrity Monitor
 
-To customize your installation and monitor custom folders, you may want to edit the config.yml file.
+If you want to customize your installation and monitor custom folders in addition to the given ones. It is required to edit the `config.yml` file located at `C:\Program Files\File Integrity Monitor\config.yml` (Windows systems) or `/etc/fim/config.yml` (Unix systems).
 
-We will describe each field and sub-field.
+In the following sections, you could review each section and parameters to tune up your configuration as you require.
 
 # Parameters
 ## node
