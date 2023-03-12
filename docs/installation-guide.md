@@ -30,9 +30,12 @@ Recommended:
 - 1 GB of memory.
 - 128 GB of storage.
 
-Download the latest release version at https://github.com/Achiefs/fim/releases select your architecture and system.
+Download the latest release version at [Download release page](https://github.com/Achiefs/fim/releases) select your architecture and system.
+
 For Windows: download the `msi` and jump to [Windows install](#windows-install)
+
 For Debian based systems: download the `deb` and jump to [Debian based install](#debian-based-install)
+
 For CentOS based systems: download the `rpm` and jump to [CentOS based install](#centos-based-install)
 
 
