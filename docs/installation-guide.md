@@ -21,7 +21,7 @@ nav_order: 2
 # Requirements
 
 File Integrity Monitor software installation will require the following to work:
-- at least 1 Core CPU.
+- At least 1 Core CPU.
 - At least 128 MB of memory.
 - At least 1 GB of storage (used storage will increase over time).
 
@@ -31,9 +31,9 @@ Recommended:
 - 128 GB of storage.
 
 Download the latest release version at https://github.com/Achiefs/fim/releases select your architecture and system.
-For Windows: download the `msi` and jump to *[Windows install]*
-For Debian based systems: download the `deb` and jump to *[Debian based install]*
-For CentOS based systems: download the `rpm` and jump to *[CentOS based install]*
+For Windows: download the `msi` and jump to [Windows install](#windows-install)
+For Debian based systems: download the `deb` and jump to [Debian based install](#debian-based-install)
+For CentOS based systems: download the `rpm` and jump to [CentOS based install](#centos-based-install)
 
 
 
