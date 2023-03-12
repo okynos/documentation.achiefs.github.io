@@ -102,8 +102,8 @@ Windows systems will require a specific package extension and instructions. FIM 
 1. Download the Windows package from [Releases page](https://github.com/Achiefs/fim/releases) 
 
 *From Powershell terminal*
-2. `.\fim-VERSION-1-x64.msi /q` (Remember to replace `VERSION` with downloaded version, e.g. `0.4.5`).
-3. Start File monitor service with `NET START FimService`.
+1. `.\fim-VERSION-1-x64.msi /q` (Remember to replace `VERSION` with downloaded version, e.g. `0.4.5`).
+2. Start File monitor service with `NET START FimService`.
 
 *From user interface* (MSI double click)
 The installer will guide you through graphical installation. Follow the interface steps to install FIM.

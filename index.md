@@ -4,28 +4,27 @@ layout: home
 nav_order: 1
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+FIM is a File Integrity Monitoring tool that tracks any event over your files. It is capable of keeping historical data of your files. It checks the filesystem changes in the background. 
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+FIM is the fastest alternative to other software like Ossec to perform file integrity monitoring. It could integrate with other security tools. The produced data can be ingested and analyzed with tools like ElasticSearch/OpenSearch. It has developed with Rust, a popular programming language.
 
-More specifically, the created site:
+---
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+Available features:
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
-
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
-
-To get started with creating a site, just click "[use this template]"!
-
-----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+- File watcher.
+FIM will emit events on any produced action over your files. This will enhance your environment to the next level of security.
+- Real time alerting.
+FIM always works in real time. Any change on your files will be detected at the moment.
+- Fast and reliable.
+With rust language at heart of FIM code. It allows us to produce faster, safer and reliable code.
+- Ingester integrated.
+FIM supports native events send to any current indexer like OpenSearch, ElasticSearch and Wazuh indexer. Enhance your experience.
+- Identification of changes in content, attributes, ownership or permissions.
+- Extended detected event data, using Audit Linux daemon. Retrieve who produces and event and which command produced.
+- Historical logs storage of detected events.
+- File integrity checking.
+Automated file integrity checksum hash production. FIM will analyze each file change.
+- Compatible with Linux, macOS and Windows.
+- Open Source software.
+Our software is developed as complete free open source model. It includes a TDD metodology to produce better software.
