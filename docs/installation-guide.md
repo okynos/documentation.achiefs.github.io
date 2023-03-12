@@ -38,7 +38,7 @@ For Debian based systems: download the `deb` and jump to [Debian based install](
 
 For CentOS based systems: download the `rpm` and jump to [CentOS based install](#centos-based-install)
 
-
+---
 
 # Supported platforms
 
@@ -53,29 +53,81 @@ For CentOS based systems: download the `rpm` and jump to [CentOS based install](
   - For ARM64: [AARCH64, ARM64].
   - For AMD64: [X86_64, AMD64].
 
+---
+
+# Debian-based install
+
+Debian-based systems will require a specific package extension and instructions. FIM is designed to install and work with the provided `deb` extension package. The steps required to install FIM in Debian systems are the following:
+
+1. Download the Debian package from [Releases page](https://github.com/Achiefs/fim/releases) 
+2. Run from a terminal `dpkg -i fim*.deb` to install the package.
+3. Start FIM software with `systemctl start fim`.
+
+From this point, FIM will start to work with the default configuration. It will report each event detected to a local JSON file, this file is stored in `/var/lib/fim/events.json`.
+
+If you detect some problem in FIM work you could retrieve the process log from `/var/log/fim/fim.log`
+
+{: .note}
+> Available commands in systemctl [start, stop, restart, status].
+
+{: .note}
+> If you wish to tune up FIM configuration take a look at [Configuration file]({% link docs/configuration-file.md %})
 
 ---
 
-# Debian based install
+# CentOS-based install
 
+CentOS-based systems will require a specific package extension and instructions. FIM is designed to install and work with the provided `rpm` extension package. The steps required to install FIM in CentOS systems are the following:
 
----
+1. Download the CentOS package from [Releases page](https://github.com/Achiefs/fim/releases) 
+2. Run from a terminal `yum install fim-*.rpm` to install the package.
+3. Start FIM software with `systemctl start fim`.
 
-# CentOS based install
+From this point, FIM will start to work with the default configuration. It will report each event detected to a local JSON file, this file is stored in `/var/lib/fim/events.json`.
+
+If you detect some problem in FIM work you could retrieve the process log from `/var/log/fim/fim.log`
+
+{: .note}
+> Available commands in systemctl [start, stop, restart, status].
+
+{: .note}
+> If you wish to tune up FIM configuration take a look at [Configuration file]({% link docs/configuration-file.md %})
 
 ---
 
 # Windows install
 
+Windows systems will require a specific package extension and instructions. FIM is designed to install and work with the provided `msi` extension package. The steps required to install FIM in Windows systems are the following:
+
+1. Download the Windows package from [Releases page](https://github.com/Achiefs/fim/releases) 
+
+*From Powershell terminal*
+2. `.\fim-VERSION-1-x64.msi /q` (Remember to replace `VERSION` with downloaded version, e.g. `0.4.5`).
+3. Start File monitor service with `NET START FimService`.
+
+*From user interface* (MSI double click)
+The installer will guide you through graphical installation. Follow the interface steps to install FIM.
+
+From this point, FIM will start to work with the default configuration. It will report each event detected to a local JSON file, this file is stored in `C:\ProgramData\fim\events.json`.
+
+If you detect some problem in FIM work you could retrieve the process log from `C:\ProgramData\fim\fim.log`
+
+{: .note}
+> Available commands [START, STOP].
+
+{: .note}
+> If you wish to tune up FIM configuration take a look at [Configuration file]({% link docs/configuration-file.md %})
+
 ---
 
-# macOS install
+# Testing FIM events
 
----
+After start FIM it will produce events detected from your host. You may want to produce a testing event to check all is working right in your environment.
 
-{: .note }
-> 
-> 
-> 
-> 
-> 
+*Produce event in FIM Linux*
+Run `touch /etc/fake_file.txt` (With default configuration) in your terminal. At the same time take a look at `/var/lib/fim/events.json` file. It will store each produced event in JSON format.
+Remove the file with `rm /etc/fake_file.txt` a different event should be logged.
+
+*Produce event in FIM Windows*
+Run `echo TEST > C:\Users\YOUR_USERNAME\fake_file.txt` in your terminal (Replace `YOUR_USERNAME` to the user you are running). At the same time take a look at `C:\ProgramData\fim\events.json` file. It will store each produced event in JSON format.
+Remove the file with `rm C:\Users\YOUR_USERNAME\fake_file.txt` a different event should be logged.
