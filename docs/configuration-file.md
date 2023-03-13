@@ -54,7 +54,7 @@ This parameter will come on each event produced by the process.
 
     Default value: `file`.
 
-    Defines the destination of the events.
+    It Defines the destination of the events.
     
     The supported options are [file, network, both].
 
@@ -83,7 +83,7 @@ This parameter will come on each event produced by the process.
 
         Default value: `None`.
 
-        Defines the IP/DNS of indexer software currently supported indexers ElasticSearch, OpenSearch and Wazuh-indexer.
+        It Defines the IP/DNS of indexer software currently supported by indexers ElasticSearch, OpenSearch and Wazuh-indexer.
 
         Format example: `0.0.0.0` for IP, `indexer.example.com` for DNS.
 
@@ -94,7 +94,7 @@ This parameter will come on each event produced by the process.
 
         Default value: `false`.
 
-        Defines the trust of HTTPS certificates of the indexer endpoint.
+        It defines the trust of HTTPS certificates of the indexer endpoint.
 
         - #### credentials
 
@@ -128,7 +128,7 @@ This parameter will come on each event produced by the process.
     Section
     {: .label .label-green }
 
-    Keeps a list of files or directories to monitorize. This section will use audit daemon engine with enhanced information.
+    Keeps a list of files or directories to monitor. This section will use the Audit daemon engine with enhanced information.
     
     Include as many elements as you require.
 
@@ -137,7 +137,7 @@ This parameter will come on each event produced by the process.
         String
         {: .label }
 
-        Defines the directory or file to monitor, it applies recursion.
+        It defines the directory or files to monitor. It applies recursion.
 
         - #### ignore
 
@@ -148,7 +148,7 @@ This parameter will come on each event produced by the process.
 
         Allows to ignore files that match the given string inside its name.
         
-        Available formats Array or List, see the note at the end of the section.
+        Available formats Array or List. Consult the note at the end of the section.
 
         - #### labels
 
@@ -157,7 +157,7 @@ This parameter will come on each event produced by the process.
         String
         {: .label}
 
-        Allows to define custom labels on each event produced at given path.
+        Allows to define custom labels on each event produced at the given path.
 
 ---
 
@@ -166,7 +166,7 @@ This parameter will come on each event produced by the process.
     Section
     {: .label .label-green }
 
-    Keeps a list of files or directories to monitorize.
+    Keeps a list of files or directories to monitor.
     
     Include as many elements as you require.
 
@@ -175,7 +175,7 @@ This parameter will come on each event produced by the process.
         String
         {: .label }
 
-        Defines the directory or file to monitor, it applies recursion.
+        It defines the directory or files to monitor. It applies recursion.
 
         - #### ignore
 
@@ -186,7 +186,7 @@ This parameter will come on each event produced by the process.
 
         Allows to ignore files that match the given string inside its name.
         
-        Available formats Array or List, see the note at the end of the section.
+        Available formats Array or List. Consult the note at the end of the section.
 
         - #### labels
 
@@ -195,7 +195,7 @@ This parameter will come on each event produced by the process.
         String
         {: .label}
 
-        Allows to define custom labels on each event produced at given path.
+        Allows to define custom labels on each event produced at the given path.
 
 ---
 
@@ -204,7 +204,7 @@ This parameter will come on each event produced by the process.
     Section
     {: .label .label-green }
 
-    Keeps configuration of logging output.
+    It Keeps the configuration of logging output.
 
     - ### file
 
@@ -213,7 +213,7 @@ This parameter will come on each event produced by the process.
 
     Default value: `C:\ProgramData\fim\fim.log` for Windows systems, `/var/log/fim/fim.log` for Unix systems.
 
-    Defines where the logs will be stored.
+    Defines where the logs are stored.
 
     - ### level
 
@@ -222,9 +222,9 @@ This parameter will come on each event produced by the process.
 
     Default value `info`.
 
-    Defines the level of verbosity logged to log file.
+    Defines the level of verbosity logged to the log file.
     
-    The supported options are [debug, info, error, warning].
+    The supported options are [debug, info, error and warning].
 
 {: .note }
 > The `ignore` parameter has two different formats:
@@ -258,7 +258,7 @@ This parameter will come on each event produced by the process.
 
 ## Example configuration
 
-FIM by default comes with a ready to use configuration. You can tune up as you wish. Here you can see an example configuration:
+FIM comes with a ready-to-use configuration. You can tune up as you wish. Here you can see an example configuration:
 
 Windows systems:
 ```
