@@ -83,7 +83,7 @@ This parameter will come on each event produced by the process.
 
         Default value: `None`.
 
-        Defines the IP/DNS of indexer software currently supported indexers Elasticsearch, Opensearch and Wazuh-indexer.
+        Defines the IP/DNS of indexer software currently supported indexers ElasticSearch, OpenSearch and Wazuh-indexer.
 
         Format example: `0.0.0.0` for IP, `indexer.example.com` for DNS.
 
